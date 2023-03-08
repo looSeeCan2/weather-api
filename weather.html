@@ -8,22 +8,26 @@
     <title>Weather Api</title>
   </head>
   <body>
-    <button class="fetch_weather">Fetch Weather</button>
     <div>
       <table class="table">
         <thead>
-          <tr class="thead_tr">
+          <tr class="thead-tr">
             <!-- create these <th> in js -->
           </tr>
         </thead>
-        <tbody class="table_body">
-          <tr class="tbody_tr">
-            <!-- create these tr in js -->
-          </tr>
+        <tbody class="table-body">
+          <!-- I have to crete a seperate tr with td everytime I click the button -->
         </tbody>
       </table>
     </div>
+    <div>
+      <br />
+      <form>
+        <input type="text" id="search-input" placeholder="Search..." />
+        <button class="fetch_weather">Fetch Weather</button>
+      </form>
+    </div>
 
-    <script type="module" src="./weather.js"></script>
+    <script type="module" src="./app.js"></script>
   </body>
 </html>
