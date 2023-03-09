@@ -1,9 +1,7 @@
-import { fetchWeather } from "./weather.js";
+import { fetchWeather } from "./src/weatherApi.js";
+import { searchWeather } from "./src/search.js";
 
-const fetchButton = async () => {
-  ///grab the button
-  const fetchButton = document.querySelector(".fetch_weather");
-  console.log(fetchButton);
+const mainTable = async () => {
   ///grab the thead tr
   const theadtr = document.querySelector(".thead-tr");
   console.log(theadtr);
@@ -16,10 +14,10 @@ const fetchButton = async () => {
     theadtr.appendChild(th);
   }
 
-  ///everytime the button is clicked the tbody is populated with another <tr><td></td></tr>
   const tbody = document.querySelector(".table-body"); ///grab the tbody
   console.log(tbody);
 
+  ///populates the page with the table
   locationsPlacedInAnArrayOfObjects.forEach((location) => {
     ///I want to make the <tr>'s here
     const tr = document.createElement("tr");
@@ -33,12 +31,17 @@ const fetchButton = async () => {
       tr.appendChild(td);
     }
   });
-
-  //TODO: create a search text box that will search for a places weather and display it. Maybe a clickable table to show a paragragh.
-
-  fetchButton.addEventListener("click", async () => {
-    event.preventDefault();
-  });
 };
 
-fetchButton();
+// debugger;
+mainTable();
+
+//TODO: create a search text box that will search for a places weather and display it. Maybe a clickable table to show a paragragh.
+///grab the button
+const fetchButton = document.querySelector(".fetch-weather");
+console.log(fetchButton);
+
+const search = document.querySelector("#search-input");
+console.log(search);
+
+fetchButton.addEventListener("click", searchWeather);
