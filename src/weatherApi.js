@@ -2,7 +2,7 @@ export const fetchWeather = async () => {
   try {
     const apiKey = "39b2ffc764b142b8a3b34951230703";
     //prettier-ignore
-    const location = "Manitowoc,Milwaukee,Green Bay,Two Rivers,Appleton";
+    const location = "Manitowoc,Milwaukee,Green Bay,Two Rivers,Appleton,Fresno";
     const locationSplit = location.split(",");
 
     /// a loop that grabs the apiUrl and throws it in an array of objects
