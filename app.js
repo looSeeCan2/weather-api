@@ -1,12 +1,12 @@
-import { fetchWeather } from "./src/weatherApi.js";
+import { weatherApi } from "./src/weatherApi.js";
 import { searchWeather } from "./src/search.js";
 
-const mainTable = async () => {
+export const mainTable = async () => {
   ///grab the thead tr
   const theadtr = document.querySelector(".thead-tr");
   console.log(theadtr);
 
-  const locationsPlacedInAnArrayOfObjects = await fetchWeather();
+  const locationsPlacedInAnArrayOfObjects = await weatherApi();
   ///populate the th in the tr by grabbing just one object and using the keys
   for (const key in locationsPlacedInAnArrayOfObjects[0].location) {
     const th = document.createElement("th");
